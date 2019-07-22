@@ -11,11 +11,11 @@
   * 加入了迭代次数限制，默认100，防止运行时间过长
   * 加入特征数量浮动限制，默认为2，即选择特征数量为10时，最终结果【11，13】都属正常
   * 上述两个限制都可通过参数修改
-  `example`：
-  ```python
-  from sklearn.datasets import make_friedman1
-  x, y = make_friedman1(n_samples=50, n_features=1000, random_state=0)
-  print(x.shape)
-  slector = lasso(x,y,10)
-  slector.run()
-  ```
+  * `example`：
+    ```python
+    from sklearn.datasets import make_friedman1
+    x, y = make_friedman1(n_samples=50, n_features=1000, random_state=0)
+    print(x.shape)
+    slector = lasso(x,y,10)
+    slector.run()
+    ```
