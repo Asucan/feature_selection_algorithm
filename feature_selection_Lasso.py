@@ -31,7 +31,7 @@ class lasso:
             lasso = Lasso(alpha=now)
             lasso.fit(features, labels)
             indexes = np.asarray(np.where(lasso.coef_ != 0))
-            if  len(indexes[0])>self.feature_num-self.swim and len(indexes[0])<self.feature_num+self.swim:
+            if  len(indexes[0])>=self.feature_num-self.swim and len(indexes[0])<=self.feature_num+self.swim:
                 return indexes[0]
             elif len(indexes[0]) > self.feature_num:
                 low = now
@@ -41,9 +41,9 @@ class lasso:
             else:
                 break
         #print('berak')
-        while (not(len(indexes[0])>self.feature_num-self.swim and len(indexes[0])<self.feature_num+self.swim)) and (self.count<self.iteration):
+        while (not(len(indexes[0])>=self.feature_num-self.swim and len(indexes[0])<=self.feature_num+self.swim)) and (self.count<self.iteration):
             self.count += 1
-            if len(indexes[0])<self.feature_num-self.swim:
+            if len(indexes[0])<=self.feature_num-self.swim:
                 high = now
                 now = (high+low)/2
             else:
