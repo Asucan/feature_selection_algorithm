@@ -16,6 +16,6 @@
     from sklearn.datasets import make_friedman1
     x, y = make_friedman1(n_samples=50, n_features=1000, random_state=0)
     print(x.shape)
-    slector = lasso(x,y,feature_num=10,swim=2,iteration=100)
-    slector.run()
+    selector = lasso(x,y,feature_num=10,swim=2,iteration=100)
+    selector.run()
     ```
