@@ -14,6 +14,7 @@
   * `example`：
     ```python
     from sklearn.datasets import make_friedman1
+    from feature_selection_Lasso import lasso
     x, y = make_friedman1(n_samples=50, n_features=1000, random_state=0)
     print(x.shape)
     selector = lasso(x,y,feature_num=10,swim=2,iteration=100)
